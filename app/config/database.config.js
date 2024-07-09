@@ -4,7 +4,7 @@ module.exports = {
   database: {
     username: 'lkmnaji',
     password: 'admin',
-    database: 'mini_project_express',
+    database: 'test_mini_project_express',
     host: 'localhost',
     dialect: 'postgres'
   }

@@ -31,10 +31,6 @@ module.exports = (sequelize, Sequelize) => {
     }
   });
 
-  // Event.associate = function(models) {
-  //   Event.hasMany(models.UserEvent);
-  // };
-
   return Event;
 };
 

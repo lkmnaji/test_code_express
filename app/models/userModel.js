@@ -1,10 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-  const User = sequelize.define("user", {
-    id: {
-      type: Sequelize.INTEGER,
-      primaryKey: true,
-      autoIncrement: true
-    },
+  const User = sequelize.define('User', {
     username: {
       type: Sequelize.STRING,
       allowNull: false,
@@ -54,10 +49,6 @@ module.exports = (sequelize, Sequelize) => {
         allowNull: true,
     },
   });
-
-  //   Users.associate = function(models) {
-  //   Users.hasMany(models.UserEvent);
-  // };
 
   return User;
 };

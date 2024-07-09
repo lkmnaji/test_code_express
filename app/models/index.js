@@ -1,16 +1,16 @@
 const { Sequelize } = require('sequelize');
-const config = require('../config/database.config');
+const dbConfig = require('../config/database.config');
 
-const sequelize = new Sequelize(config.database.database, config.database.username, config.database.password, {
-  host: config.database.host,
-  dialect: config.database.dialect
+const sequelize = new Sequelize(dbConfig.database.database, dbConfig.database.username, dbConfig.database.password, {
+  host: dbConfig.database.host,
+  dialect: dbConfig.database.dialect
 });
 
 const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.user = require('../models/userModel')(sequelize, Sequelize);
-db.event = require('../models/eventModel')(sequelize, Sequelize);
+db.user = require('./user')(sequelize, Sequelize);
+db.event = require('./event')(sequelize, Sequelize);
 
 module.exports = db;
