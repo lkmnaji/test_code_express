@@ -10,7 +10,7 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.user = require('./user')(sequelize, Sequelize);
-db.event = require('./event')(sequelize, Sequelize);
+db.user = require('../models/userModel')(sequelize, Sequelize);
+db.event = require('../models/eventModel')(sequelize, Sequelize);
 
 module.exports = db;

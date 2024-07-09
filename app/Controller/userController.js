@@ -4,7 +4,7 @@ const Event = db.event;
 const jwt = require('jsonwebtoken');
 const config = require('../config/database.config');
 
-exports.register = async (req, res) => {
+exports.createUser = async (req, res) => {
 
   const { username, password, role } = req.body;
 
@@ -48,7 +48,7 @@ exports.login = async (req, res) => {
   }
 };
 
-exports.getUsers = async (req,res) => {
+exports.getAllUsers = async (req,res) => {
   try {
     const findUsers = await User.findAll({ attributes : ['id', 'username', 'role']});
     res.status(200).send({ message: "success", result: "User ditemukan", user : findUsers});
@@ -128,3 +128,4 @@ exports.addEventsUser = async (req, res) => {
     res.status(500).send({message :"error", result: "Fungsi addEventsUser gagal"});
   }
 };
+
