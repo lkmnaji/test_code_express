@@ -26,7 +26,7 @@ exports.createUser = async (req, res) => {
   }
 };
 
-exports.login = async (req, res) => {
+exports.loginUser = async (req, res) => {
   try {
     const userName = await User.findOne({ where: { username: req.body.username } });
     if (!userName) {
